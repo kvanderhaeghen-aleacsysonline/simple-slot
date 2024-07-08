@@ -5,9 +5,10 @@
     "main": "index.js",
     "scripts": {
         "dev": "cross-env TS_NODE_PROJECT=build/tsconfig.node.json NODE_ENV=development webpack serve --config build/webpack.ts",
+        "prod": "cross-env TS_NODE_PROJECT=build/tsconfig.node.json NODE_ENV=production  webpack --config build/webpack.prod.ts",
         "lint": "tsc --build build/tsconfig.all.json && eslint --config build/eslintrc.js 'src/**/*'",
         "format": "prettier --write --config build/prettierrc.json 'src/**/*' 'build/**/*'",
-        "copy:assets": "copyfiles -e 'dist/hot' -u 1 'dist/**/*' docs"
+        "copy:assets": "copyfiles -e 'dist/prod/hot' -u 2 'dist/prod/**/*' docs"
     },
     "author": "Kristof Van Der Haeghen",
     "license": "ISC",

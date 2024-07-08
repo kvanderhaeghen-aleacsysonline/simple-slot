@@ -6,3 +6,4 @@ node_modules
 /*.log
 /.vs
 /package-lock.json
+/dist

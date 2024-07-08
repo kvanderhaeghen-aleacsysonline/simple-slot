@@ -73,12 +73,22 @@ export class SlotMachine {
             }
         });
     }
-    
+
     public init(): void {
         this.createReels();
         this.setReels(true);
+        this.createLogo();
         animationUpdater.init(this.tickEventHandler);
     }
+
+    private createLogo(): void {
+        const logo = new PIXI.Sprite(PIXI.Texture.from('https://i.imgur.com/UjL9rZJ.png'));
+        logo.scale.set(0.5);
+        logo.anchor.set(0.5);
+        logo.x = 400;
+        logo.y = 550;
+        this.app?.stage?.addChild(logo);
+      }
 
     private lastTime = Date.now();
     public update(): void {
